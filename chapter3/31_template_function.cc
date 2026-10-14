@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 template <typename T>
 T myMax(const T& a, const T& b) {

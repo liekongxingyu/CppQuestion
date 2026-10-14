@@ -4,35 +4,41 @@
         {
             "label": "Run Current File",
             "type": "shell",
-            "command": "mkdir -p build && rm -f build/${fileBasenameNoExtension} && g++ -std=c++11 -O2 -pthread \"${file}\" -o build/${fileBasenameNoExtension} && ./build/${fileBasenameNoExtension} ",
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            },
-            "problemMatcher": []
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++ 生成活动文件",
-            "command": "/usr/bin/g++",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
-            ],
+            "command": "mkdir -p \"${workspaceFolder}/build\" && g++ -std=c++17 -g -pthread \"${file}\" -o \"${workspaceFolder}/build/${fileBasenameNoExtension}\" && \"${workspaceFolder}/build/${fileBasenameNoExtension}\"",
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "调试器生成的任务。"
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Build Current File",
+            "type": "shell",
+            "command": "mkdir -p \"${workspaceFolder}/build\" && g++ -std=c++17 -g -pthread \"${file}\" -o \"${workspaceFolder}/build/${fileBasenameNoExtension}\"",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
         }
     ]
 }

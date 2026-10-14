@@ -2,14 +2,23 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Current File",
-            "type": "cppdbg",
+            "name": "Debug (CodeLLDB)",
+            "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "args": [],
+            "stopOnEntry": false,
             "cwd": "${workspaceFolder}",
-            "MIMode": "gdb",
-            "externalConsole": false,
-            "preLaunchTask": "Run Current File"
+            "preLaunchTask": "Build Current File"
+        },
+        {
+            "name": "Debug (Native Debug / GDB)",
+            "type": "gdb",
+            "request": "launch",
+            "target": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "cwd": "${workspaceFolder}",
+            "valuesFormatting": "parseText",
+            "preLaunchTask": "Build Current File"
         }
     ]
 }
