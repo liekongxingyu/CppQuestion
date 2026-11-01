@@ -69,5 +69,12 @@
         "cinttypes": "cpp",
         "typeindex": "cpp",
         "variant": "cpp"
-    }
+    },
+    "clangd.path": "/usr/bin/clangd",
+    "clangd.fallbackFlags": [
+        "-std=c++17",
+        "-I${workspaceFolder}/net_framework/include",
+        "-I/usr/include/x86_64-linux-gnu/qt6",
+        "-I/usr/include/x86_64-linux-gnu/qt6/QtCore"
+    ]
 }

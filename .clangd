@@ -1,0 +1,7 @@
+CompileFlags:
+  Add:
+    - -std=c++17
+    - -I/home/Lekong/Cproject/CppQuestion/net_framework/include
+    - -I/usr/include/x86_64-linux-gnu/qt6
+    - -I/usr/include/x86_64-linux-gnu/qt6/QtCore
+    - -I/home/Lekong/Cproject/CppQuestion/QtPrac/build/signals_slots_demo_autogen/include

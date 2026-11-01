@@ -6,32 +6,32 @@ class Stack
 private:
     T *data;
     int max;
-    int top;
+    int top_;
 
 public:
-    Stack(int m = 1000) : max(m), top(-1)
+    Stack(int m = 1000) : max(m), top_(-1)
     {
         data = new T[max];
     }
 
     void push(const T &value)
     {
-        if (top + 1 < max)
+        if (top_ + 1 < max)
         {
-            data[++top] = value;
+            data[++top_] = value;
         }
     }
     void pop()
     {
-        if (top >= -1)
+        if (top_ >= 0)
         {
-            --top;
+            --top_;
         }
     }
     // 返回值必须是常量或常量引用
     T &top() 
     {
-        return data[top];
+        return data[top_];
     }
     ~Stack()
     {
